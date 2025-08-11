@@ -79,44 +79,68 @@
                  * YES
                  */
 
-            int[] arr;
+            //int[] arr;
+            //int N;
+            //bool ispalindrome = true;
+
+            //do
+            //{
+            //    Console.Write("Enter the size of the array N: ");
+            //} while (!int.TryParse(Console.ReadLine(), out N));
+
+            //arr = new int[N];
+
+            ////Enter the values of the array
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    do
+            //    {
+            //        Console.Write($"Enter the the value of arr[{i}]: ");
+            //    } while (!int.TryParse(Console.ReadLine(), out arr[i]));
+            //}
+
+            //for (int i = 0; i < arr?.Length / 2; i++)
+            //{
+            //    if (arr[i] != arr[arr.Length - 1 - i])
+            //    {
+            //        ispalindrome = false;
+            //        break;
+            //    }
+            //}
+
+            //if (ispalindrome)
+            //    Console.WriteLine("YES");
+
+            //else
+            //    Console.WriteLine("NO"); 
+
+            #endregion
+
+            /* 3.Given a Queue, implement a function to reverse the elements of a queue using a stack. */
             int N;
-            bool ispalindrome = true;
+            Queue<string> queue = new Queue<string>();
+
 
             do
             {
-                Console.Write("Enter the size of the array N: ");
+                Console.Write("Enter the size of the queueu N: ");
             } while (!int.TryParse(Console.ReadLine(), out N));
 
-            arr = new int[N];
 
-            //Enter the values of the array
-            for (int i = 0; i < arr.Length; i++)
+
+            //Enter the values of the queue
+            for (int i = 0; i < N; i++)
             {
-                do
-                {
-                    Console.Write($"Enter the the value of arr[{i}]: ");
-                } while (!int.TryParse(Console.ReadLine(), out arr[i]));
+                Console.Write($"Enter the value of queueu[{i}] : ");
+                queue.Enqueue(Console.ReadLine()??"");
             }
 
-            for (int i = 0; i < arr?.Length / 2; i++)
-            {
-                if (arr[i] != arr[arr.Length - 1 - i])
-                {
-                    ispalindrome = false;
-                    break;
-                }
-            }
+            Console.WriteLine("****Queueu before reversing****");
+            Helper.PrintQueue(queue);
 
-            if (ispalindrome)
-                Console.WriteLine("YES");
-
-            else
-                Console.WriteLine("NO"); 
-            #endregion
-
-
-
+            Console.WriteLine("****Queueu after reversing****");
+            Helper.RreverseQueue<string>(ref queue);
+            Helper.PrintQueue(queue);
 
 
 
