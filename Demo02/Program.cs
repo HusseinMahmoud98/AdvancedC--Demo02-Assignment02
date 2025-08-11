@@ -253,7 +253,6 @@ namespace Demo02
             Console.WriteLine(queue.Dequeue());
             Console.WriteLine(queue.Peek());
 
-
             PrintQueue(queue); 
             #endregion
 
