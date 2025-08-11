@@ -333,6 +333,7 @@ namespace Assignment02
             //Helper.PrintArrayList(result); 
             #endregion
 
+            #region Q10
             /* 10.Given an ArrayList of integers and a target sum, find if there is a contiguous sub list that sums up to the target.
              * Ex:
              * Input: [1, 2, 3, 7, 5]
@@ -340,46 +341,75 @@ namespace Assignment02
              * Output: [2, 3, 7]
              */
 
-            int N, number, target;
-            List<int> arrlist = new List<int>();
-            List<int> result = new List<int>();
+            //int N, number, target;
+            //List<int> arrlist = new List<int>();
+            //List<int> result = new List<int>();
 
+
+            //do
+            //{
+            //    Console.Write("Enter the size of the arrlist N: ");
+            //} while (!int.TryParse(Console.ReadLine(), out N));
+
+            ////Enter the array values
+            //for (int i = 0; i < N; i++)
+            //{
+            //    do
+            //    {
+            //        Console.Write($"Enter the value of arrList[{i}]: "); 
+            //    } while (!int.TryParse(Console.ReadLine(), out number));
+            //    arrlist.Add(number);
+            //}
+
+            ////Enter the target value
+            //do
+            //{
+            //    Console.Write("Enter the size of the target value: ");
+            //} while (!int.TryParse(Console.ReadLine(), out target));
+
+
+            //result = Helper.FindContigusSum(arrlist, target);
+
+            //if(result.Count>0)
+            //{
+            //    Console.WriteLine("The Sublist sum members are:");
+            //    Helper.PrintList<int>(result);
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("No sublist sum members");
+            //}
+
+            #endregion
+
+            int N, K;
+            Queue queue = new Queue();
 
             do
             {
-                Console.Write("Enter the size of the arrlist N: ");
+                Console.Write("Enter the size of the queue N: ");
             } while (!int.TryParse(Console.ReadLine(), out N));
 
-            //Enter the array values
-            for (int i = 0; i < N; i++)
-            {
-                do
-                {
-                    Console.Write($"Enter the value of arrList[{i}]: "); 
-                } while (!int.TryParse(Console.ReadLine(), out number));
-                arrlist.Add(number);
-            }
-
-            //Enter the target value
             do
             {
-                Console.Write("Enter the size of the target value: ");
-            } while (!int.TryParse(Console.ReadLine(), out target));
+                Console.Write("Enter the number of the queue K elements to be reversed: ");
+            } while (!int.TryParse(Console.ReadLine(), out K));
 
 
-            result = Helper.FindContigusSum(arrlist, target);
-
-            if(result.Count>0)
+            //Enter the values of the queue
+            for (int i = 0; i < N; i++)
             {
-                Console.WriteLine("The Sublist sum members are:");
-                Helper.PrintList<int>(result);
+                Console.Write($"Enter the value of queueu[{i}] : ");
+                queue.Enqueue(Console.ReadLine() ?? "");
             }
 
-            else
-            {
-                Console.WriteLine("No sublist sum members");
-            }
+            Console.WriteLine("Queue before reversing");
+            Helper.PrintQueue(queue);
 
+            Console.WriteLine("Queue after reversing");
+            Helper.ReverseFirstKQueueElements(queue, K);
+            Helper.PrintQueue(queue);
 
         }
     }

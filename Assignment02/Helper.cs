@@ -32,6 +32,13 @@ namespace Assignment02
                 Console.WriteLine(item);
             }
         }
+        public static void PrintQueue(Queue queue)
+        {
+            foreach (var item in queue)
+            {
+                Console.WriteLine(item);
+            }
+        }
         public static void PrintArrayList(ArrayList arrayList)
         {
             foreach (var item in arrayList)
@@ -46,6 +53,7 @@ namespace Assignment02
                 Console.WriteLine(item);
             }
         }
+        
         public static bool isBalanced(string? str)
         {
             if (str is not null)
@@ -204,6 +212,47 @@ namespace Assignment02
             }
 
             return new List<int>(); //return empty list if no sequence is found           
+        }
+
+        public static void ReverseFirstKQueueElements(Queue queue, int K)
+        {
+            if (queue?.Count > 0)
+            {
+                Stack stack = new Stack();
+                Queue tempQueue = new Queue();
+
+
+                for (int i = 0; i < K; i++)
+                {
+                    if (queue.Count > 0)
+                    {
+                        stack.Push(queue.Dequeue());
+                    }
+                }
+
+
+                while (queue?.Count > 0)
+                {
+                    tempQueue.Enqueue(queue.Dequeue());
+
+                }
+
+
+
+                //now the required queue is empty
+                //we will enqueue the stack first then the the tempqueue
+
+                while (stack?.Count > 0)
+                {
+                    queue.Enqueue(stack.Pop());
+                }
+
+                while (tempQueue?.Count > 0)
+                {
+                    queue.Enqueue(tempQueue.Dequeue());
+
+                }
+            }
         }
     }
 }
