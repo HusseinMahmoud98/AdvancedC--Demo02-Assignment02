@@ -144,5 +144,35 @@ namespace Assignment02
 
             return -1;
         }
+
+        public static ArrayList FindIntersectionOfArrayList(ArrayList arrlist1, ArrayList arrlist2)
+        {
+            ArrayList result = new ArrayList();
+            if (arrlist1 is not null && arrlist2 is not null)
+            {
+                
+
+                for (int i = 0; i < arrlist1.Count; i++)
+                {
+                    for (int j = 0; j < arrlist2.Count; j++)
+                    {
+                        if (arrlist1[i].Equals(arrlist2[j]))
+                        {
+                            result.Add(arrlist1[i]);
+                            arrlist1.RemoveAt(i);
+                            arrlist2.RemoveAt(j);
+                            i--;
+                            break;
+
+                        }
+                    }
+                }
+
+            }
+                       
+        
+
+            return result;
+        }
     }
 }

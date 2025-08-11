@@ -251,41 +251,87 @@ namespace Assignment02
             //}
             #endregion
 
+            #region Q08
             /* 8.Create a function that pushes a series of integers onto a stack.
-             * Then, search for a target integer in the stack.If the target is found, print a message indicating that
-             * the target was found how many elements were checked before finding the target(“Target was found successfully and the count = 5”).
-             * If the target is not found, print a message indicating that the target was not found(“Target was not found”).
-             * Note : take the target as input from the user
+                * Then, search for a target integer in the stack.If the target is found, print a message indicating that
+                * the target was found how many elements were checked before finding the target(“Target was found successfully and the count = 5”).
+                * If the target is not found, print a message indicating that the target was not found(“Target was not found”).
+                * Note : take the target as input from the user
+                */
+
+            //int startSeries, endSeries, target, index;
+
+            //do
+            //{
+            //    Console.Write("Enter the start of the series integer: ");
+            //} while (!int.TryParse(Console.ReadLine(), out startSeries));
+
+            //do
+            //{
+            //    Console.Write("Enter the end of the series integer: ");
+            //} while (!int.TryParse(Console.ReadLine(), out endSeries));
+
+            //do
+            //{
+            //    Console.Write("Enter the target integer: ");
+            //} while (!int.TryParse(Console.ReadLine(), out target));
+
+            //index = Helper.FindTarget(startSeries, endSeries, target);
+
+            //if (index >= 0)
+            //{
+            //    Console.WriteLine($"Target was found successfully and the count = {index}");
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("Target was not found");
+            //}
+            #endregion
+
+            /* 9. Given two arrays, find their intersection. Each element in the result should appear as many times as it shows in both arrays.
+             * Ex :
+             * Input : 5 , 3
+             * [1,2,3,4,4] , [10,4,4]
+             * Output : [4,4]
              */
 
-            int startSeries, endSeries, target, index;
+            int N, M;
+            ArrayList arrlist1 = new ArrayList();
+            ArrayList arrlist2 = new ArrayList();
+            ArrayList result = new ArrayList();
+
+           
+            do
+            {
+                Console.Write("Enter the size of the arrlist1 N: ");
+            } while (!int.TryParse(Console.ReadLine(), out N));
+            
 
             do
             {
-                Console.Write("Enter the start of the series integer: ");
-            }while (!int.TryParse(Console.ReadLine(), out startSeries));
+                Console.Write("Enter the size of the arrlist2 M: ");
+            } while (!int.TryParse(Console.ReadLine(), out M));
 
-            do
+            for (int i = 0; i < N; i++)
             {
-                Console.Write("Enter the end of the series integer: ");
-            } while (!int.TryParse(Console.ReadLine(), out endSeries));
-
-            do
-            {
-                Console.Write("Enter the target integer: ");
-            } while (!int.TryParse(Console.ReadLine(), out target));
-
-            index = Helper.FindTarget(startSeries, endSeries, target);
-
-            if (index >= 0)
-            {
-                Console.WriteLine($"Target was found successfully and the count = {index}");
+                Console.Write($"Enter the value of arrList1[{i}]: ");
+                arrlist1.Add(Console.ReadLine());
             }
 
-            else
+            for (int i = 0; i < M; i++)
             {
-                Console.WriteLine("Target was not found");
+                Console.Write($"Enter the value of arrList2 [{i}]: ");
+                arrlist2.Add(Console.ReadLine());
             }
+
+            result = Helper.FindIntersectionOfArrayList(arrlist1 , arrlist2);
+
+            Console.WriteLine("***** Intersection *****");
+            Helper.PrintArrayList(result);
+
+
+
         }
     }
 }
