@@ -1,4 +1,7 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment02
 {
@@ -237,19 +240,52 @@ namespace Assignment02
                  *    queue.Enqueue(5.28)
                  */
 
-            Queue queue = new Queue();
-            queue.Enqueue(1);
-            queue.Enqueue("Apple");
-            queue.Enqueue(5.28);
+            //Queue queue = new Queue();
+            //queue.Enqueue(1);
+            //queue.Enqueue("Apple");
+            //queue.Enqueue(5.28);
 
-            while (queue.Count > 0)
-            {
-                Console.WriteLine(queue.Dequeue());
-            } 
+            //while (queue.Count > 0)
+            //{
+            //    Console.WriteLine(queue.Dequeue());
+            //}
             #endregion
 
+            /* 8.Create a function that pushes a series of integers onto a stack.
+             * Then, search for a target integer in the stack.If the target is found, print a message indicating that
+             * the target was found how many elements were checked before finding the target(“Target was found successfully and the count = 5”).
+             * If the target is not found, print a message indicating that the target was not found(“Target was not found”).
+             * Note : take the target as input from the user
+             */
 
+            int startSeries, endSeries, target, index;
 
+            do
+            {
+                Console.Write("Enter the start of the series integer: ");
+            }while (!int.TryParse(Console.ReadLine(), out startSeries));
+
+            do
+            {
+                Console.Write("Enter the end of the series integer: ");
+            } while (!int.TryParse(Console.ReadLine(), out endSeries));
+
+            do
+            {
+                Console.Write("Enter the target integer: ");
+            } while (!int.TryParse(Console.ReadLine(), out target));
+
+            index = Helper.FindTarget(startSeries, endSeries, target);
+
+            if (index >= 0)
+            {
+                Console.WriteLine($"Target was found successfully and the count = {index}");
+            }
+
+            else
+            {
+                Console.WriteLine("Target was not found");
+            }
         }
     }
 }

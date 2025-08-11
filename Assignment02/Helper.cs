@@ -109,7 +109,6 @@ namespace Assignment02
                 }
             }
         }
-
         public static void removeOddNumbers(List<int> list)
         {
             bool isRemoved = false;
@@ -123,6 +122,27 @@ namespace Assignment02
                 } 
             }
             
+        }
+
+        public static int FindTarget(int startSeries, int endSeries, int target)
+        {
+            Stack<int> stack = new Stack<int>();
+            int count = 0;
+
+            for (int i = startSeries; i <= endSeries; i++)
+            {
+                stack.Push(i);
+            }
+
+            while (stack.Count > 0)
+            {
+                if (stack.Pop() == target)
+                {
+                    return count;
+                }
+            }
+
+            return -1;
         }
     }
 }
