@@ -116,33 +116,53 @@
 
             #endregion
 
-            /* 3.Given a Queue, implement a function to reverse the elements of a queue using a stack. */
-            int N;
-            Queue<string> queue = new Queue<string>();
+            #region Q03
+            ///* 3.Given a Queue, implement a function to reverse the elements of a queue using a stack. */
+            //int N;
+            //Queue<string> queue = new Queue<string>();
 
 
-            do
+            //do
+            //{
+            //    Console.Write("Enter the size of the queueu N: ");
+            //} while (!int.TryParse(Console.ReadLine(), out N));
+
+
+
+            ////Enter the values of the queue
+            //for (int i = 0; i < N; i++)
+            //{
+            //    Console.Write($"Enter the value of queueu[{i}] : ");
+            //    queue.Enqueue(Console.ReadLine()??"");
+            //}
+
+            //Console.WriteLine("****Queueu before reversing****");
+            //Helper.PrintQueue(queue);
+
+            //Console.WriteLine("****Queueu after reversing****");
+            //Helper.RreverseQueue<string>(ref queue);
+            //Helper.PrintQueue(queue); 
+            #endregion
+
+            /*4. Given a Stack, implement a function to check if a string of parentheses is balanced using a stack.
+             *   Ex:
+             *   Input: [()]{}
+             *   Output: Balanced
+             */
+
+            Console.Write("Enter String: ");
+
+            string? str = Console.ReadLine();
+
+            if (Helper.isBalanced(str))
             {
-                Console.Write("Enter the size of the queueu N: ");
-            } while (!int.TryParse(Console.ReadLine(), out N));
-
-
-
-            //Enter the values of the queue
-            for (int i = 0; i < N; i++)
-            {
-                Console.Write($"Enter the value of queueu[{i}] : ");
-                queue.Enqueue(Console.ReadLine()??"");
+                Console.WriteLine("Balanced");
             }
 
-            Console.WriteLine("****Queueu before reversing****");
-            Helper.PrintQueue(queue);
-
-            Console.WriteLine("****Queueu after reversing****");
-            Helper.RreverseQueue<string>(ref queue);
-            Helper.PrintQueue(queue);
-
-
+            else
+            {
+                Console.WriteLine("Unbalanced");
+            }
 
 
 
