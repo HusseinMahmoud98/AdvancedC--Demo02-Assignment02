@@ -1,4 +1,6 @@
-﻿namespace Assignment02
+﻿using System.Collections;
+
+namespace Assignment02
 {
     internal class Program
     {
@@ -144,28 +146,53 @@
             //Helper.PrintQueue(queue); 
             #endregion
 
+            #region Q04
             /*4. Given a Stack, implement a function to check if a string of parentheses is balanced using a stack.
-             *   Ex:
-             *   Input: [()]{}
-             *   Output: Balanced
-             */
+                *   Ex:
+                *   Input: [()]{}
+                *   Output: Balanced
+                */
 
-            Console.Write("Enter String: ");
+            //Console.Write("Enter String: ");
 
-            string? str = Console.ReadLine();
+            //string? str = Console.ReadLine();
 
-            if (Helper.isBalanced(str))
+            //if (Helper.isBalanced(str))
+            //{
+            //    Console.WriteLine("Balanced");
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("Unbalanced");
+            //} 
+            #endregion
+
+            /* 5.Given an array, implement a function to remove duplicate elements from an array. */
+
+            ArrayList arrList;
+            int N;
+
+            do
             {
-                Console.WriteLine("Balanced");
+                Console.Write("Enter the size of the array N: ");
+            } while (!int.TryParse(Console.ReadLine(), out N));
+
+            arrList = new ArrayList(N);
+
+            //Enter the values of the array
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write($"Enter the array[{i}]: ");
+                arrList.Add(Console.ReadLine());
             }
 
-            else
-            {
-                Console.WriteLine("Unbalanced");
-            }
+            Console.WriteLine("**** Array List before removing dublicate ****");
+            Helper.PrintArrayList(arrList);
 
-
-
+            Console.WriteLine("**** Array List after removing dublicate ****");
+            Helper.removeDublicate(ref arrList);
+            Helper.PrintArrayList(arrList);
 
 
 

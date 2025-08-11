@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -27,6 +28,13 @@ namespace Assignment02
         public static void PrintQueue<T>(Queue<T> queue)
         {
             foreach (var item in queue)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        public static void PrintArrayList(ArrayList arrayList)
+        {
+            foreach (var item in arrayList)
             {
                 Console.WriteLine(item);
             }
@@ -77,6 +85,24 @@ namespace Assignment02
             
 
             return true;
+        }
+
+        public static void removeDublicate(ref ArrayList arr)
+        {
+            if (arr is not null)
+            {
+                for (int i = 0; i < arr.Count; i++)
+                {
+                    for (int j = i+1; j < arr.Count - 1; j++)
+                    {
+                        if (arr[i].Equals(arr[j]))
+                        {
+                            arr.RemoveAt(j);
+                        }
+                    }
+
+                }
+            }
         }
     }
 }
