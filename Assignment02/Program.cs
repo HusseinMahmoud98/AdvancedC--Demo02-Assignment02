@@ -198,36 +198,56 @@ namespace Assignment02
             #endregion
 
             #region Q06
-            /* 6. Given an array list , implement a function to remove all odd numbers from it. */
+            ///* 6. Given an array list , implement a function to remove all odd numbers from it. */
 
-            List<int> list;
-            int capacity, value;
+            //List<int> list;
+            //int capacity, value;
 
-            do
-            {
-                Console.Write("Enter the capacity of the list: ");
-            } while (!int.TryParse(Console.ReadLine(), out capacity));
+            //do
+            //{
+            //    Console.Write("Enter the capacity of the list: ");
+            //} while (!int.TryParse(Console.ReadLine(), out capacity));
 
-            list = new List<int>(capacity);
+            //list = new List<int>(capacity);
 
-            //Enter the values of the list
-            for (int i = 0; i < capacity; i++)
-            {
-                do
-                {
-                    Console.Write($"Enter the the value of list[{i}]: ");
-                } while (!int.TryParse(Console.ReadLine(), out value));
+            ////Enter the values of the list
+            //for (int i = 0; i < capacity; i++)
+            //{
+            //    do
+            //    {
+            //        Console.Write($"Enter the the value of list[{i}]: ");
+            //    } while (!int.TryParse(Console.ReadLine(), out value));
 
-                list.Add(value);
-            }
+            //    list.Add(value);
+            //}
 
-            Console.WriteLine("**** List of numbers before removing odd numbers ****");
-            Helper.PrintList(list);
+            //Console.WriteLine("**** List of numbers before removing odd numbers ****");
+            //Helper.PrintList(list);
 
-            Console.WriteLine("**** List of numbers after removing odd numbers ****");
-            Helper.removeOddNumbers(list);
-            Helper.PrintList(list); 
+            //Console.WriteLine("**** List of numbers after removing odd numbers ****");
+            //Helper.removeOddNumbers(list);
+            //Helper.PrintList(list); 
             #endregion
+
+            #region Q07
+            /* 7. Implement a queue that can hold different data types. 
+                 *    And insert the following data:
+                 *    queue.Enqueue(1)
+                 *    queue.Enqueue(“Apple”)
+                 *    queue.Enqueue(5.28)
+                 */
+
+            Queue queue = new Queue();
+            queue.Enqueue(1);
+            queue.Enqueue("Apple");
+            queue.Enqueue(5.28);
+
+            while (queue.Count > 0)
+            {
+                Console.WriteLine(queue.Dequeue());
+            } 
+            #endregion
+
 
 
         }
