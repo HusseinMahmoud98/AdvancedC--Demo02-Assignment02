@@ -123,7 +123,6 @@ namespace Assignment02
             }
             
         }
-
         public static int FindTarget(int startSeries, int endSeries, int target)
         {
             Stack<int> stack = new Stack<int>();
@@ -144,7 +143,6 @@ namespace Assignment02
 
             return -1;
         }
-
         public static ArrayList FindIntersectionOfArrayList(ArrayList arrlist1, ArrayList arrlist2)
         {
             ArrayList result = new ArrayList();
@@ -173,6 +171,39 @@ namespace Assignment02
         
 
             return result;
+        }
+        public static List<int> FindContigusSum(List<int> arrayList, int target)
+        {
+            
+            List<int> result = new List<int>();
+
+            for (int i = 0; i < arrayList?.Count; i++)
+            {
+                int Sum = 0;
+                for (int j = i; j < arrayList?.Count ; j++)
+                {
+                    Sum += arrayList[j];
+
+                    if (Sum>target)
+                    {
+                        result.Clear();
+                        break;
+                    }
+
+                    else if (Sum == target)
+                    {
+                        result.Add(arrayList[j]);
+                        return result;
+                    }
+
+                    else
+                    {
+                        result.Add(arrayList[j]);
+                    }
+                }
+            }
+
+            return new List<int>(); //return empty list if no sequence is found           
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -289,47 +290,95 @@ namespace Assignment02
             //}
             #endregion
 
+            #region Q09
             /* 9. Given two arrays, find their intersection. Each element in the result should appear as many times as it shows in both arrays.
-             * Ex :
-             * Input : 5 , 3
-             * [1,2,3,4,4] , [10,4,4]
-             * Output : [4,4]
+                 * Ex :
+                 * Input : 5 , 3
+                 * [1,2,3,4,4] , [10,4,4]
+                 * Output : [4,4]
+                 */
+
+            //int N, M;
+            //ArrayList arrlist1 = new ArrayList();
+            //ArrayList arrlist2 = new ArrayList();
+            //ArrayList result = new ArrayList();
+
+
+            //do
+            //{
+            //    Console.Write("Enter the size of the arrlist1 N: ");
+            //} while (!int.TryParse(Console.ReadLine(), out N));
+
+
+            //do
+            //{
+            //    Console.Write("Enter the size of the arrlist2 M: ");
+            //} while (!int.TryParse(Console.ReadLine(), out M));
+
+            //for (int i = 0; i < N; i++)
+            //{
+            //    Console.Write($"Enter the value of arrList1[{i}]: ");
+            //    arrlist1.Add(Console.ReadLine());
+            //}
+
+            //for (int i = 0; i < M; i++)
+            //{
+            //    Console.Write($"Enter the value of arrList2 [{i}]: ");
+            //    arrlist2.Add(Console.ReadLine());
+            //}
+
+            //result = Helper.FindIntersectionOfArrayList(arrlist1 , arrlist2);
+
+            //Console.WriteLine("***** Intersection *****");
+            //Helper.PrintArrayList(result); 
+            #endregion
+
+            /* 10.Given an ArrayList of integers and a target sum, find if there is a contiguous sub list that sums up to the target.
+             * Ex:
+             * Input: [1, 2, 3, 7, 5]
+             *         12
+             * Output: [2, 3, 7]
              */
 
-            int N, M;
-            ArrayList arrlist1 = new ArrayList();
-            ArrayList arrlist2 = new ArrayList();
-            ArrayList result = new ArrayList();
+            int N, number, target;
+            List<int> arrlist = new List<int>();
+            List<int> result = new List<int>();
 
-           
+
             do
             {
-                Console.Write("Enter the size of the arrlist1 N: ");
+                Console.Write("Enter the size of the arrlist N: ");
             } while (!int.TryParse(Console.ReadLine(), out N));
-            
 
-            do
-            {
-                Console.Write("Enter the size of the arrlist2 M: ");
-            } while (!int.TryParse(Console.ReadLine(), out M));
-
+            //Enter the array values
             for (int i = 0; i < N; i++)
             {
-                Console.Write($"Enter the value of arrList1[{i}]: ");
-                arrlist1.Add(Console.ReadLine());
+                do
+                {
+                    Console.Write($"Enter the value of arrList[{i}]: "); 
+                } while (!int.TryParse(Console.ReadLine(), out number));
+                arrlist.Add(number);
             }
 
-            for (int i = 0; i < M; i++)
+            //Enter the target value
+            do
             {
-                Console.Write($"Enter the value of arrList2 [{i}]: ");
-                arrlist2.Add(Console.ReadLine());
+                Console.Write("Enter the size of the target value: ");
+            } while (!int.TryParse(Console.ReadLine(), out target));
+
+
+            result = Helper.FindContigusSum(arrlist, target);
+
+            if(result.Count>0)
+            {
+                Console.WriteLine("The Sublist sum members are:");
+                Helper.PrintList<int>(result);
             }
 
-            result = Helper.FindIntersectionOfArrayList(arrlist1 , arrlist2);
-
-            Console.WriteLine("***** Intersection *****");
-            Helper.PrintArrayList(result);
-
+            else
+            {
+                Console.WriteLine("No sublist sum members");
+            }
 
 
         }
