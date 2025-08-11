@@ -168,32 +168,66 @@ namespace Assignment02
             //} 
             #endregion
 
-            /* 5.Given an array, implement a function to remove duplicate elements from an array. */
+            #region Q05
 
-            ArrayList arrList;
-            int N;
+            /* 5.Given an array, implement a function to remove duplicate elements from an array. */
+            //ArrayList arrList;
+            //int N;
+
+            //do
+            //{
+            //    Console.Write("Enter the size of the array N: ");
+            //} while (!int.TryParse(Console.ReadLine(), out N));
+
+            //arrList = new ArrayList(N);
+
+            ////Enter the values of the array
+            //for (int i = 0; i < N; i++)
+            //{
+            //    Console.Write($"Enter the array[{i}]: ");
+            //    arrList.Add(Console.ReadLine());
+            //}
+
+            //Console.WriteLine("**** Array List before removing dublicate ****");
+            //Helper.PrintArrayList(arrList);
+
+            //Console.WriteLine("**** Array List after removing dublicate ****");
+            //Helper.removeDublicate(ref arrList);
+            //Helper.PrintArrayList(arrList);
+
+            #endregion
+
+            #region Q06
+            /* 6. Given an array list , implement a function to remove all odd numbers from it. */
+
+            List<int> list;
+            int capacity, value;
 
             do
             {
-                Console.Write("Enter the size of the array N: ");
-            } while (!int.TryParse(Console.ReadLine(), out N));
+                Console.Write("Enter the capacity of the list: ");
+            } while (!int.TryParse(Console.ReadLine(), out capacity));
 
-            arrList = new ArrayList(N);
+            list = new List<int>(capacity);
 
-            //Enter the values of the array
-            for (int i = 0; i < N; i++)
+            //Enter the values of the list
+            for (int i = 0; i < capacity; i++)
             {
-                Console.Write($"Enter the array[{i}]: ");
-                arrList.Add(Console.ReadLine());
+                do
+                {
+                    Console.Write($"Enter the the value of list[{i}]: ");
+                } while (!int.TryParse(Console.ReadLine(), out value));
+
+                list.Add(value);
             }
 
-            Console.WriteLine("**** Array List before removing dublicate ****");
-            Helper.PrintArrayList(arrList);
+            Console.WriteLine("**** List of numbers before removing odd numbers ****");
+            Helper.PrintList(list);
 
-            Console.WriteLine("**** Array List after removing dublicate ****");
-            Helper.removeDublicate(ref arrList);
-            Helper.PrintArrayList(arrList);
-
+            Console.WriteLine("**** List of numbers after removing odd numbers ****");
+            Helper.removeOddNumbers(list);
+            Helper.PrintList(list); 
+            #endregion
 
 
         }

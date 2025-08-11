@@ -39,7 +39,13 @@ namespace Assignment02
                 Console.WriteLine(item);
             }
         }
-
+        public static void PrintList<T>(List<T> list)
+        {
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+        }
         public static bool isBalanced(string? str)
         {
             if (str is not null)
@@ -86,7 +92,6 @@ namespace Assignment02
 
             return true;
         }
-
         public static void removeDublicate(ref ArrayList arr)
         {
             if (arr is not null)
@@ -103,6 +108,21 @@ namespace Assignment02
 
                 }
             }
+        }
+
+        public static void removeOddNumbers(List<int> list)
+        {
+            bool isRemoved = false;
+            for (int i = 0; i < list.Count; i++)
+            {
+               
+                if (list[i] % 2 != 0)
+                {
+                    list.RemoveAt(i);
+                    i--; //decrement 1 from i because the list count is decremented by 1
+                } 
+            }
+            
         }
     }
 }
